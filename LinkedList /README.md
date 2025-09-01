@@ -1,78 +1,17 @@
-## 🧠 Cornell Notes
-
-📘 **Topic:** Linked Lists in Java <br>
-📆 **Date:** 27-07-2025 <br>
-👤 **Course/Source:** Java DSA Course
+# 📘 Linked Lists in Java – Complete Chapter Notes
 
 ---
 
-### ✨ Cues / Questions
+## 1. Introduction to Linked Lists
 
-**Intro & Structure**
+* **Linked List**: linear data structure made of **nodes**.
+* **Node**: contains a value + pointer to next node.
+* **Head**: first node.
+* **Tail**: last node (points to null).
+* Nodes are **not stored contiguously in memory**.
+* Unlike arrays, **no direct indexing**.
 
-* What is a linked list?
-* How does it differ from an ArrayList?
-* What is a node?
-* What are head and tail?
-
-**Append**
-
-* What does append do?
-* How is it implemented?
-
-**Prepend**
-
-* What does prepend do?
-* How is prepend implemented?
-
-**Remove Last**
-
-* Why is removing last O(n)?
-* How do we find the new tail?
-
-**Remove First**
-
-* How is it different from remove last?
-* What happens when there's only one node?
-
-**Get**
-
-* How is get(index) implemented?
-* What’s its time complexity?
-
-**Set**
-
-* How do we set a value at a given index?
-* How does it reuse get?
-
-**Insert**
-
-* How is insertion at index handled?
-* When do we reuse append/prepend?
-
-**Remove (by index)**
-
-* How is removal by index done?
-* What edge cases must be handled?
-
-**Reverse**
-
-* How do we reverse a linked list in place?
-* Why are temp/before/after needed?
-
----
-
-### 📝 Notes
-
-#### ✨ Intro to Linked Lists
-
-* Linked list: a linear data structure with nodes.
-* Each node stores a value and a pointer to the next node.
-* Uses `head` and `tail` pointers.
-* Nodes are **not contiguous in memory**.
-* No direct indexing like arrays.
-
-#### 🔹 Node Structure
+### Node Structure
 
 ```java
 class Node {
@@ -86,7 +25,7 @@ class Node {
 }
 ```
 
-#### 🔹 LinkedList Fields
+### LinkedList Class Fields
 
 ```java
 class LinkedList {
@@ -98,7 +37,7 @@ class LinkedList {
 
 ---
 
-### 🔹 Append
+## 2. Append (Add to End)
 
 ```java
 public void append(int value) {
@@ -114,12 +53,12 @@ public void append(int value) {
 }
 ```
 
-* Adds to end.
-* O(1) time.
+* Adds new node at end.
+* **O(1)** time.
 
 ---
 
-### 🔹 Prepend
+## 3. Prepend (Add to Front)
 
 ```java
 public void prepend(int value) {
@@ -135,12 +74,12 @@ public void prepend(int value) {
 }
 ```
 
-* Adds to front.
-* O(1) time.
+* Adds new node at start.
+* **O(1)** time.
 
 ---
 
-### 🔹 Remove Last
+## 4. Remove Last
 
 ```java
 public Node removeLast() {
@@ -162,12 +101,12 @@ public Node removeLast() {
 }
 ```
 
-* Traverse to 2nd last node.
-* O(n) time.
+* Traverse to second-last node.
+* **O(n)** time (must walk list).
 
 ---
 
-### 🔹 Remove First
+## 5. Remove First
 
 ```java
 public Node removeFirst() {
@@ -181,11 +120,12 @@ public Node removeFirst() {
 }
 ```
 
-* O(1) time.
+* Removes first node.
+* **O(1)** time.
 
 ---
 
-### 🔹 Get
+## 6. Get (By Index)
 
 ```java
 public Node get(int index) {
@@ -198,11 +138,12 @@ public Node get(int index) {
 }
 ```
 
-* O(n) time.
+* Traverses until index found.
+* **O(n)** time.
 
 ---
 
-### 🔹 Set
+## 7. Set (Update Value)
 
 ```java
 public boolean set(int index, int value) {
@@ -215,12 +156,12 @@ public boolean set(int index, int value) {
 }
 ```
 
-* Reuses `get()`.
-* O(n) time.
+* Reuses `get()` method.
+* **O(n)** time.
 
 ---
 
-### 🔹 Insert
+## 8. Insert (At Index)
 
 ```java
 public boolean insert(int index, int value) {
@@ -242,12 +183,12 @@ public boolean insert(int index, int value) {
 }
 ```
 
-* Handles start, end, middle insertions.
-* O(n) for middle.
+* Handles start, end, and middle cases.
+* **O(1)** for start/end, **O(n)** for middle.
 
 ---
 
-### 🔹 Remove (by Index)
+## 9. Remove (By Index)
 
 ```java
 public Node remove(int index) {
@@ -264,11 +205,11 @@ public Node remove(int index) {
 ```
 
 * Returns removed node.
-* O(n) time.
+* **O(n)** time.
 
 ---
 
-### 🔹 Reverse
+## 10. Reverse (In-Place)
 
 ```java
 public void reverse() {
@@ -286,12 +227,23 @@ public void reverse() {
 }
 ```
 
-* In-place reversal.
-* Uses `before`, `after`, and `temp` pointers.
-* O(n) time.
+* Swaps head and tail, reverses links.
+* Uses `before`, `after`, `temp` pointers.
+* **O(n)** time.
 
 ---
 
-### ✅ Summary
+# 🔑 Chapter Summary
 
-Linked Lists offer flexible, dynamic memory usage and are optimal for frequent insertion/removal at the start or middle. Unlike arrays, indexing is linear, but pointer-based manipulation makes prepending, appending, and reversing efficient when used correctly.
+* Linked Lists store elements dynamically via nodes.
+* **Append/Prepend**: O(1).
+* **Remove Last**: O(n), must traverse.
+* **Remove First**: O(1).
+* **Get/Set**: O(n).
+* **Insert/Remove by index**: O(n) for middle, O(1) for ends.
+* **Reverse**: in-place with three pointers.
+* Best for frequent insert/remove; not ideal for fast random access.
+
+---
+
+See you next time!
