@@ -1,7 +1,5 @@
 # 🌳 Trees – Complete Chapter Notes
 
----
-
 ## 1. Introduction to Trees
 
 * **Tree**: a hierarchical data structure made of nodes.
