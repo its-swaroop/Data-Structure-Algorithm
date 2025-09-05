@@ -1,6 +1,5 @@
 # 📘 Linked Lists in Java – Complete Chapter Notes
 
----
 
 ## 1. Introduction to Linked Lists
 
